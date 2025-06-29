@@ -11,22 +11,22 @@
       
       
       
-        <link rel="prev" href="../sfml/">
+        <link rel="prev" href="../how_to_play/">
       
       
-        <link rel="next" href="../../compilation/">
+        <link rel="next" href="../../technical_report/algorithms/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>CMake - Documentación</title>
+        <title>Mapas Personalizados - Documentación</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -45,7 +45,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cmake" class="md-skip">
+        <a href="#mapas-personalizados" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -80,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="../../.." title="Documentación" class="md-header__button md-logo" aria-label="Documentación" data-md-component="logo">
+    <a href="../.." title="Documentación" class="md-header__button md-logo" aria-label="Documentación" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CMake
+              Mapas Personalizados
             
           </span>
         </div>
@@ -190,7 +190,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Documentación" class="md-nav__button md-logo" aria-label="Documentación" data-md-component="logo">
+    <a href="../.." title="Documentación" class="md-nav__button md-logo" aria-label="Documentación" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -220,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -279,20 +279,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -308,7 +306,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Herramientas y Bibliotecas Requeridas
@@ -322,7 +320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../compiler_cpp/" class="md-nav__link">
+      <a href="../setup_libs/compiler_cpp/" class="md-nav__link">
         
   
   
@@ -345,12 +343,89 @@
   
   
     <li class="md-nav__item">
-      <a href="../sfml/" class="md-nav__link">
+      <a href="../setup_libs/sfml/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     SFML 3.0.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup_libs/cmake/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CMake
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compilation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instrucciones de Compilación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_play/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controles y Jugabilidad
     
   </span>
   
@@ -382,7 +457,7 @@
   
   
   <span class="md-ellipsis">
-    CMake
+    Mapas Personalizados
     
   </span>
   
@@ -395,7 +470,7 @@
   
   
   <span class="md-ellipsis">
-    CMake
+    Mapas Personalizados
     
   </span>
   
@@ -418,46 +493,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#guia-para-descarga-e-instalacion-de-cmake" class="md-nav__link">
+  <a href="#comprension-de-mapas-personalizados" class="md-nav__link">
     <span class="md-ellipsis">
-      Guía para Descarga e Instalación de CMake
+      Comprensión de Mapas Personalizados
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-en-windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación en Windows
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instalación en Windows">
+    <nav class="md-nav" aria-label="Comprensión de Mapas Personalizados">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#descargar-el-instalador-de-cmake" class="md-nav__link">
+  <a href="#estructura-del-archivo" class="md-nav__link">
     <span class="md-ellipsis">
-      Descargar el instalador de CMake
+      Estructura del Archivo
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#agregar-cmake-al-path" class="md-nav__link">
+  <a href="#reglas-de-creacion" class="md-nav__link">
     <span class="md-ellipsis">
-      Agregar CMake al PATH
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verificar-la-instalacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verificar la instalación
+      Reglas de Creación
     </span>
   </a>
   
@@ -469,9 +526,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#otros-sistemas-operativos" class="md-nav__link">
+  <a href="#donde-encontrar-el-archivo-mapatxt" class="md-nav__link">
     <span class="md-ellipsis">
-      Otros Sistemas Operativos
+      Dónde encontrar el Archivo mapa.txt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-crear-o-modificar-un-mapa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cómo Crear o Modificar un Mapa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-probar-tu-mapa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cómo Probar tu Mapa
     </span>
   </a>
   
@@ -486,14 +561,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
               
                 
   
@@ -501,76 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compilation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Instrucciones de Compilación
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../how_to_play/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Controles y Jugabilidad
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../custom_maps/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Mapas Personalizados
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../visual_guide.md" class="md-nav__link">
+      <a href="../visual_guide.md" class="md-nav__link">
         
   
   
@@ -638,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../technical_report/algorithms/" class="md-nav__link">
+      <a href="../../technical_report/algorithms/" class="md-nav__link">
         
   
   
@@ -661,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../technical_report/graphics_lib/" class="md-nav__link">
+      <a href="../../technical_report/graphics_lib/" class="md-nav__link">
         
   
   
@@ -684,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../technical_report/visualization_engine/" class="md-nav__link">
+      <a href="../../technical_report/visualization_engine/" class="md-nav__link">
         
   
   
@@ -707,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../technical_report/development_challenges/" class="md-nav__link">
+      <a href="../../technical_report/development_challenges/" class="md-nav__link">
         
   
   
@@ -757,46 +755,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#guia-para-descarga-e-instalacion-de-cmake" class="md-nav__link">
+  <a href="#comprension-de-mapas-personalizados" class="md-nav__link">
     <span class="md-ellipsis">
-      Guía para Descarga e Instalación de CMake
+      Comprensión de Mapas Personalizados
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-en-windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalación en Windows
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instalación en Windows">
+    <nav class="md-nav" aria-label="Comprensión de Mapas Personalizados">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#descargar-el-instalador-de-cmake" class="md-nav__link">
+  <a href="#estructura-del-archivo" class="md-nav__link">
     <span class="md-ellipsis">
-      Descargar el instalador de CMake
+      Estructura del Archivo
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#agregar-cmake-al-path" class="md-nav__link">
+  <a href="#reglas-de-creacion" class="md-nav__link">
     <span class="md-ellipsis">
-      Agregar CMake al PATH
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verificar-la-instalacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verificar la instalación
+      Reglas de Creación
     </span>
   </a>
   
@@ -808,9 +788,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#otros-sistemas-operativos" class="md-nav__link">
+  <a href="#donde-encontrar-el-archivo-mapatxt" class="md-nav__link">
     <span class="md-ellipsis">
-      Otros Sistemas Operativos
+      Dónde encontrar el Archivo mapa.txt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-crear-o-modificar-un-mapa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cómo Crear o Modificar un Mapa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-probar-tu-mapa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cómo Probar tu Mapa
     </span>
   </a>
   
@@ -835,70 +833,60 @@
   
 
 
-<h1 id="cmake">CMake<a class="headerlink" href="#cmake" title="Permanent link">#</a></h1>
-<h2 id="guia-para-descarga-e-instalacion-de-cmake">Guía para Descarga e Instalación de CMake<a class="headerlink" href="#guia-para-descarga-e-instalacion-de-cmake" title="Permanent link">#</a></h2>
-<p>En esta sección, se detallan los pasos para descargar e instalar CMake, una herramienta esencial para la compilación del proyecto "Escape the Grid". CMake es un sistema de automatización de compilación que utiliza archivos de configuración para generar archivos de proyecto específicos del entorno de desarrollo.</p>
-<h2 id="instalacion-en-windows">Instalación en Windows<a class="headerlink" href="#instalacion-en-windows" title="Permanent link">#</a></h2>
-<h3 id="descargar-el-instalador-de-cmake">Descargar el instalador de CMake<a class="headerlink" href="#descargar-el-instalador-de-cmake" title="Permanent link">#</a></h3>
-<ol>
-<li>
-<p>Visita la página oficial de <a href="https://cmake.org/download/">CMake</a> y descarga el instalador para Windows. Asegúrate de seleccionar la versión adecuada para tu sistema operativo (32-bit o 64-bit).</p>
-<p><img alt="Descargar CMake" src="../../../img/cmak_windows.png" /></p>
-</li>
-<li>
-<p>Una vez descargado, ejecuta el instalador.</p>
-</li>
-<li>
-<p>Presiona "Next" en la pantalla de bienvenida del instalador.</p>
-</li>
-<li>
-<p>Presiona "I Agree" para aceptar los términos de la licencia.</p>
-</li>
-</ol>
-<h3 id="agregar-cmake-al-path">Agregar CMake al PATH<a class="headerlink" href="#agregar-cmake-al-path" title="Permanent link">#</a></h3>
-<ol>
-<li>
-<p>Durante la instalación, asegúrate de seleccionar la opción "Add CMake to the system PATH for all users" para que CMake esté disponible desde cualquier terminal.</p>
-<p><img alt="Agregar CMake al PATH" src="../../../img/cmake_path.png" /></p>
-<p><em>Esta imagen es ilustrativa solo para mostrar la opción de agregar CMake al PATH. El aspecto visual puede variar según la versión del instalador.</em></p>
-<div class="admonition warning">
-<p class="admonition-title">Importante</p>
-<p>Si no seleccionas esta opción, tendrás que agregar manualmente la ruta de CMake a las variables de entorno del sistema.</p>
-</div>
-</li>
-<li>
-<p>Completa la instalación haciendo clic en "Install" y luego en "Finish" cuando se complete el proceso.</p>
-</li>
-</ol>
-<h3 id="verificar-la-instalacion">Verificar la instalación<a class="headerlink" href="#verificar-la-instalacion" title="Permanent link">#</a></h3>
-<ol>
-<li>
-<p>Abre una terminal y escribe el siguiente comando para verificar que CMake se ha instalado correctamente:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cmake<span class="w"> </span>--version
+<h1 id="mapas-personalizados">Mapas Personalizados<a class="headerlink" href="#mapas-personalizados" title="Permanent link">#</a></h1>
+<p>Si te sientes creativo y quieres diseñar tus propios laberintos, puedes crear mapas personalizados para Escape the Grid. Aquí te explicamos cómo hacerlo.</p>
+<h2 id="comprension-de-mapas-personalizados">Comprensión de Mapas Personalizados<a class="headerlink" href="#comprension-de-mapas-personalizados" title="Permanent link">#</a></h2>
+<p>Antes de comenzar a crear tus propios mapas, es importante entender la estructura de un mapa en Escape the Grid para que tu mapa sea funcional y desafiante.</p>
+<h3 id="estructura-del-archivo">Estructura del Archivo<a class="headerlink" href="#estructura-del-archivo" title="Permanent link">#</a></h3>
+<p>Los mapas personalizados se definen en el archivo de texto <code>mapa.txt</code> con una estructura específica. Cada celda del laberinto se representa por un carácter único:</p>
+<ul>
+<li><strong><code>S</code></strong>: Punto de inicio del jugador.</li>
+<li><strong><code>.</code></strong>: Celda de camino normal, transitable.</li>
+<li><strong><code>W</code></strong>: Muro, celda no transitable.</li>
+<li><strong><code>1</code>, <code>2</code>, <code>3</code></strong>: Ítems de la secuencia de la "Caja Mágica".</li>
+<li><strong><code>T</code></strong>: Muro temporizado, que se convierte en muro (<code>W</code>) después de un número de turnos.</li>
+<li><strong><code>F</code></strong>: Celda final u objetivo.</li>
+</ul>
+<p>Ejemplo de la estructura de un mapa:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>WWWWWWWW
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>WS.1.T.F
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>W..W...W
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>W..2.3.W
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>WWTT..WW
 </span></code></pre></div>
+<h3 id="reglas-de-creacion">Reglas de Creación<a class="headerlink" href="#reglas-de-creacion" title="Permanent link">#</a></h3>
+<ul>
+<li>El mapa debe de tener la celda de inicio (<code>S</code>).</li>
+<li>El mapa debe de tener la celda final (<code>F</code>).</li>
+<li>Las celdas de la secuencia de la "Caja Mágica" deben estar numeradas del 1 al 3.</li>
+<li>Se debe de tener en cuenta los turnos (30 movimientos) antes de que los muros temporizados se conviertan en muros permanentes. Es importante hacer el mapa de tal manera que el jugador pueda completar la secuencia de la "Caja Mágica" antes de que los muros temporizados se conviertan en muros permanentes.</li>
+</ul>
 <div class="admonition info">
-<p class="admonition-title">Información</p>
-<p>Si ves la versión de CMake, significa que la instalación fue exitosa y CMake está correctamente configurado en tu sistema.</p>
+<p class="admonition-title">Información Adicional</p>
+<p>Si se desean modificar los turnos antes de que se activen los temporizados, únicamente es posible hacerlo modificando el código fuente del juego en el archivo <code>config.hpp</code>, ya que actualmente no hay una opción para configurarlo desde el archivo de mapa. Para más detalles sobre cómo compilar el juego, revisa la sección de <a href="../compilation/">Instrucciones de Compilación</a>.</p>
 </div>
-</li>
+<h2 id="donde-encontrar-el-archivo-mapatxt">Dónde encontrar el Archivo <code>mapa.txt</code><a class="headerlink" href="#donde-encontrar-el-archivo-mapatxt" title="Permanent link">#</a></h2>
+<p>El archivo <code>mapa.txt</code> se encuentra en la carpeta del ejecutable del juego, específicamente en la raíz. Para más información sobre como obtener el juego, revisa la sección de <a href="../how_to_play/">Controles y Jugabilidad</a>.</p>
+<p><img alt="mapa" src="../../img/mapa.png" /></p>
+<h2 id="como-crear-o-modificar-un-mapa">Cómo Crear o Modificar un Mapa<a class="headerlink" href="#como-crear-o-modificar-un-mapa" title="Permanent link">#</a></h2>
+<p>Para crear o modificar un mapa personalizado, sigue estos pasos:</p>
+<ol>
+<li>Abre el archivo <code>mapa.txt</code> ubicado en la carpeta del ejecutable del juego en un editor de texto (como Notepad, Visual Studio Code, etc.).</li>
+<li>Escribe o edita el contenido del archivo siguiendo la estructura mencionada anteriormente.</li>
+<li>Guarda los cambios en el archivo <code>mapa.txt</code>.</li>
 </ol>
-<h2 id="otros-sistemas-operativos">Otros Sistemas Operativos<a class="headerlink" href="#otros-sistemas-operativos" title="Permanent link">#</a></h2>
-<p>Para otros sistemas operativos, como macOS o Linux, puedes instalar CMake utilizando el gestor de paquetes correspondiente:</p>
+<h2 id="como-probar-tu-mapa">Cómo Probar tu Mapa<a class="headerlink" href="#como-probar-tu-mapa" title="Permanent link">#</a></h2>
+<p>Una vez que hayas creado o modificado el archivo <code>mapa.txt</code>, simplemente inicia el juego abriendo el archivo <code>.exe</code>. El juego cargará automáticamente el mapa definido en este archivo. Si el mapa es válido, podrás jugarlo inmediatamente.</p>
+<div class="admonition warning">
+<p class="admonition-title">Precaución</p>
 <ul>
 <li>
-<p>En macOS, puedes usar Homebrew:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>brew<span class="w"> </span>install<span class="w"> </span>cmake
-</span></code></pre></div></p>
+<p>Asegúrate de que el mapa sea válido y siga las <a href="/user_guide/custom_maps/#reglas-de-creacion">Reglas de Creación</a>. Si el mapa no es válido, el juego podría no funcionar correctamente, el mapa podría no cargar o podría haber errores inesperados.</p>
 </li>
 <li>
-<p>En Ubuntu o Debian, puedes usar APT:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>cmake
-</span></code></pre></div></p>
+<p>El mapa no puede contener otro nombre de archivo que no sea <code>mapa.txt</code>. Si deseas probar un mapa diferente, simplemente reemplaza el contenido del archivo <code>mapa.txt</code> con tu nuevo diseño.</p>
 </li>
 </ul>
-<div class="admonition success">
-<p class="admonition-title">¡Instalación exitosa!</p>
-<p>Ahora tienes CMake instalado y configurado en tu sistema, listo para ser utilizado.</p>
 </div>
 
 
@@ -937,7 +925,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../sfml/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: SFML 3.0.0">
+          <a href="../how_to_play/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Controles y Jugabilidad">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -947,20 +935,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                SFML 3.0.0
+                Controles y Jugabilidad
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../compilation/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Instrucciones de Compilación">
+          <a href="../../technical_report/algorithms/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Algoritmos Implementados">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                Instrucciones de Compilación
+                Algoritmos Implementados
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1011,12 +999,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.top", "navigation.footer", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.top", "navigation.footer", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
