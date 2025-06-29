@@ -1,0 +1,63 @@
+site_name: Documentación
+site_author: Equipo 24
+
+theme:
+  name: material
+  language: es
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - header.autohide
+    - navigation.top
+    - navigation.footer
+    - content.code.annotate
+    - content.tabs.link
+    - content.code.copy
+
+repo_url: https://github.com/UCASV/programming-challenge-tsc012025-pc-grupo24
+repo_name: UCASV/programming-challenge-tsc012025-pc-grupo24
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/UCASV/programming-challenge-tsc012025-pc-grupo24
+
+nav:
+  - "Inicio": "index.md"
+  - "Guía de Usuario":
+      - "Herramientas y Bibliotecas Requeridas":
+          - "Compilador C++17": "user_guide/setup_libs/compiler_cpp.md"
+          - "SFML 3.0.0": "user_guide/setup_libs/sfml.md"
+          - "CMake": "user_guide/setup_libs/cmake.md"
+      - "Instrucciones de Compilación": "user_guide/compilation.md"
+      - "Cómo Jugar y Controles": "user_guide/how_to_play.md"
+  - "Reporte Técnico":
+      - "Algoritmos Implementados": "technical_report/algorithms.md"
+      - "Biblioteca Gráfica y Manual de Uso": "technical_report/graphics_lib.md"
+      - "Motor de Visualización": "technical_report/visualization_engine.md"
+      - "Desafíos del Desarrollo": "technical_report/development_challenges.md"
+
+markdown_extensions:
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - admonition
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: "#"
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.arithmatex:
+      generic: true
+ 
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
