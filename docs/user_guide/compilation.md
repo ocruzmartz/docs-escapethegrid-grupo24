@@ -23,7 +23,7 @@ Antes de comenzar, asegúrate de tener Visual Studio Code configurado correctame
 
 1. Abre Visual Studio Code.
 2. Navega a la sección de extensiones en la barra lateral izquierda.
-
+    
    ![Extensiones de Visual Studio Code](../img/extensiones-vscode.png)
 
 3. Busca e instala las extensiones necesarias:
