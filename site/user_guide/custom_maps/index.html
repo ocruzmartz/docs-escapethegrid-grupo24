@@ -73,6 +73,10 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
@@ -958,31 +962,46 @@
 </span></code></pre></div>
 <h3 id="reglas-de-creacion">Reglas de Creación<a class="headerlink" href="#reglas-de-creacion" title="Permanent link">#</a></h3>
 <ul>
+<li>
+<p><strong>Requeridas</strong></p>
+<ul>
 <li>El mapa debe de tener la celda de inicio (<code>S</code>).</li>
+<li>El mapa debe de contener celdas de camino (<code>.</code>).</li>
 <li>El mapa debe de tener la celda final (<code>F</code>).</li>
-<li>Las celdas de la secuencia de la "Caja Mágica" deben estar numeradas del 1 al 3.</li>
-<li>Se debe de tener en cuenta los turnos (30 movimientos) antes de que los muros temporizados se conviertan en muros permanentes. Es importante hacer el mapa de tal manera que el jugador pueda completar la secuencia de la "Caja Mágica" antes de que los muros temporizados se conviertan en muros permanentes.</li>
+<li>Las celdas de la secuencia de la "Caja Mágica" deben estar numeradas del <code>1</code> al <code>3</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Opcionales</strong></p>
+<ul>
+<li>Los muros son opcionales, pero si se incluyen, deben ser representados por <code>W</code>.</li>
+<li>Los muros temporizados (<code>T</code>) son opcionales, pero se debe de tener en cuenta los turnos (30 movimientos) antes de que los muros temporizados se conviertan en muros permanentes. Es importante hacer el mapa de tal manera que el jugador pueda completar la secuencia de la "Caja Mágica" antes de que los muros temporizados se conviertan en muros permanentes. De lo contrario, el jugador no podrá completar el mapa si no hay un camino válido.</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Información Adicional</p>
 <p>Si se desean modificar los turnos antes de que se activen los temporizados, únicamente es posible hacerlo modificando el código fuente del juego en el archivo <code>config.hpp</code>, ya que actualmente no hay una opción para configurarlo desde el archivo de mapa. Para más detalles sobre cómo compilar el juego, revisa la sección de <a href="../compilation/">Instrucciones de Compilación</a>.</p>
 </div>
+</li>
+</ul>
 <h2 id="donde-encontrar-el-archivo-mapatxt">Dónde encontrar el Archivo <code>mapa.txt</code><a class="headerlink" href="#donde-encontrar-el-archivo-mapatxt" title="Permanent link">#</a></h2>
 <p>El archivo <code>mapa.txt</code> se encuentra en la carpeta del ejecutable del juego, específicamente en la raíz. Para más información sobre como obtener el juego, revisa la sección de <a href="../how_to_play/">Controles y Jugabilidad</a>.</p>
-<p><img alt="mapa" src="../../img/mapa.png" /></p>
+<p><img alt="mapa" src="../../img/game2.png" /></p>
 <h2 id="como-crear-o-modificar-un-mapa">Cómo Crear o Modificar un Mapa<a class="headerlink" href="#como-crear-o-modificar-un-mapa" title="Permanent link">#</a></h2>
 <p>Para crear o modificar un mapa personalizado, sigue estos pasos:</p>
 <ol>
 <li>Abre el archivo <code>mapa.txt</code> ubicado en la carpeta del ejecutable del juego en un editor de texto (como Notepad, Visual Studio Code, etc.).</li>
-<li>Escribe o edita el contenido del archivo siguiendo la estructura mencionada anteriormente.</li>
-<li>Guarda los cambios en el archivo <code>mapa.txt</code>.</li>
-</ol>
+<li>Escribe o edita el contenido del archivo siguiendo la estructura mencionada en la sección <a href="/user_guide/custom_maps/#comprension-de-mapas-personalizados">Comprensión de Mapas Personalizados</a>.</li>
+<li>
+<p>Guarda los cambios en el archivo <code>mapa.txt</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">Información</p>
 <p>El mismo proceso es utilizado para crear o modificar mapas personalizados en la versión de compilación del juego. El archivo <code>mapa.txt</code> se encuentra en la raíz del proyecto. Para más información sobre cómo compilar el juego, revisa la sección de <a href="../compilation/">Instrucciones de Compilación</a>.</p>
 </div>
+</li>
+</ol>
 <h2 id="como-probar-tu-mapa">Cómo Probar tu Mapa<a class="headerlink" href="#como-probar-tu-mapa" title="Permanent link">#</a></h2>
-<p>Una vez que hayas creado o modificado el archivo <code>mapa.txt</code>, simplemente inicia el juego abriendo el archivo <code>.exe</code>. El juego cargará automáticamente el mapa definido en este archivo. Si el mapa es válido, podrás jugarlo inmediatamente.</p>
+<p>Una vez que hayas creado o modificado el archivo <code>mapa.txt</code>, simplemente inicia el juego abriendo el archivo <code>EscapeTheGrid.exe</code>. El juego cargará automáticamente el mapa definido en este archivo. Si el mapa es válido, podrás jugarlo inmediatamente.</p>
+<p><img alt="Game" src="../../img/game1.png" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Precaución</p>
 <ul>
@@ -1175,21 +1194,6 @@
   
 </div>
       
-        <div class="md-social">
-  
-    
-    
-    
-    
-      
-      
-    
-    <a href="https://github.com/UCASV/programming-challenge-tsc012025-pc-grupo24" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
-    </a>
-  
-</div>
-      
     </div>
   </div>
 </footer>
@@ -1202,7 +1206,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.top", "navigation.footer", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.top", "navigation.footer", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>

@@ -8,14 +8,33 @@ Pero antes de aprender todo lo necesario y comenzar a jugar, necesitas instalar 
 
 ### Opción 1: Descarga el Ejecutable (Recomendado)
 
-La manera más sencilla de empezar es descargar el archivo `.zip` que contiene el juego listo para usar.
+La manera más sencilla de empezar es descargar el archivo `.zip` que contiene el ejecutable del juego y otros archivos necesarios.
 
-1. Descarga el archivo `.zip` desde [este enlace](https://example.com/EscapeTheGrid.zip)
-2. Extrae el contenido del archivo en la ubicación de tu preferencia
-3. Ejecuta el archivo `EscapeTheGrid.exe` para iniciar el juego
+1. Descarga el archivo que contiene el nombre `EscapeTheGrid_MagicBox_v1.0.1.zip` desde [este enlace](https://ucaedusv-my.sharepoint.com/:f:/g/personal/00109321_uca_edu_sv/Eor_f_IQbMNPlsQvKSqTalYBjj-2u1di-KSuCnpAg07DKg?e=e0l1cu).
+2. Extrae el contenido del archivo en la ubicación de tu preferencia.
+3. En la carpeta extraída, encontrarás el archivo `EscapeTheGrid.exe` y otros archivos necesarios para ejecutar el juego.
 
-!!! tip "Recomendación"
-    Esta opción es ideal si solo quieres jugar sin preocuparte por el código fuente o la compilación.
+    ![Carpeta Extraída](../img/game1.png)
+
+    !!! warning "Advertencia"
+        Asegúrate de que todos los archivos extraídos permanezcan en la misma carpeta para que el juego funcione correctamente.
+
+        ¿Por qué son importantes los archivos adicionales? Te explicamos:
+
+        - **`EscapeTheGrid.exe`**: Es el ejecutable principal del juego.
+        - **`ARIAL.TTF`**: Es la fuente utilizada en el juego para mostrar texto.
+        - **`mapa.txt`**: Es un archivo de texto que contiene el mapa del juego. Puedes modificarlo para crear tus propios mapas personalizados. Para crear mapas personalizados puedes consultar la sección [Mapas Personalizados](../custom_maps.md).
+        - **Archivos `.dll` para SFML 3.0.0**: Son bibliotecas necesarias para que el juego funcione correctamente. Estos archivos son parte de la biblioteca SFML 3.0.0, que es esencial para la ejecución del juego. Para conocer más detalles sobre como se utiliza SFML en el proyecto, puedes consultar la sección [Biblioteca Gráfica y Manual de Uso](../technical_report/graphics_lib.md).
+        - **Archivos `.dll` de C++**: Son bibliotecas necesarias para la ejecución del juego. Estos archivos son parte de la biblioteca estándar de C++ y son esenciales para que el juego funcione correctamente.
+
+4. Ejecuta el archivo `EscapeTheGrid.exe` para iniciar el juego
+
+    ![Ejecutar el Juego](../img/gif8.gif)
+
+    !!! tip "Recomendación"
+        Esta opción es ideal si solo quieres jugar sin preocuparte por el código fuente o la compilación.
+
+    
 
 ### Opción 2: Compilación desde el Código Fuente
 

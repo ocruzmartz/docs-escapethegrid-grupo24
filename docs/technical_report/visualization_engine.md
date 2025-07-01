@@ -113,17 +113,35 @@ Sobre el mapa base se renderizan las entidades dinámicas y la interfaz de usuar
 
 - **El Jugador (`Player`):** La clase [`Player`](src/player.hpp) encapsula una `sf::CircleShape`. Su posición no es gestionada por la clase misma, sino por la lógica central en [`main.cpp`](src/main.cpp), que le asigna una nueva coordenada basándose en el nodo del grid en el que se encuentra.
 
-- **Interfaz de Usuario (HUD):** Toda la información para el jugador (puntuación, turnos, objetivo actual) se gestiona en [`main.cpp`](src/main.cpp) mediante objetos `sf::Text`. Estos objetos se actualizan en cada fotograma con los datos más recientes del `GameState` y se dibujan en una capa superior al juego.
+- **Interfaz de Usuario (HUD):**  
+  Actualmente, la ventana del juego se divide en dos paneles principales:
+    - **Panel lateral de interfaz:**  
+     Ubicado a la derecha, contiene toda la información relevante para el jugador (puntuación, turnos, objetivo actual) y los botones de interacción como "Reiniciar" y "Resolver". Este panel se implementa con un fondo (`sf::RectangleShape`) y varios objetos `sf::Text` para los textos y botones, todos actualizados dinámicamente según el estado del juego.
 
-  ```cpp
-  // En main.cpp
-      scoreText.setString("Puntaje: " + std::to_string(estadoJuego.getScore()));
-      turnText.setString("Turno: " + std::to_string(estadoJuego.getCurrentTurn()));
-      int proximoItem = estadoJuego.getNextSequenceItem();
-      if (proximoItem > 3) { sequenceText.setString("Objetivo: Ve a la Salida!"); }
-      else { sequenceText.setString("Objetivo: Item " + std::to_string(proximoItem)); }
-  // ...
-  ```
+        ```cpp
+        // En main.cpp
+        window.draw(uiPanelBackground);
+        window.draw(scoreText);
+        window.draw(turnText);
+        window.draw(sequenceText);
+        window.draw(restartButtonShape);
+        window.draw(restartButtonText);
+        window.draw(solveButtonShape);
+        window.draw(solveButtonText);
+        // ...
+        ```
+
+    - **Panel principal de juego:**  
+     Ocupa la mayor parte de la ventana y es donde se renderiza la cuadrícula triangular, el jugador y los elementos del laberinto. Aquí se dibuja el estado actual del juego y se gestionan las animaciones y movimientos.
+
+        ```cpp
+        // En main.cpp
+        window.draw(gameGrid);
+        window.draw(player);
+        // ...
+        ```
+
+    Esta separación permite una experiencia visual clara y organizada, facilitando tanto la interacción como el seguimiento del progreso y las acciones dentro del juego.
 
 ## Sistema de Animaciones Basado en Tiempo
 
@@ -139,41 +157,41 @@ Para evitar transiciones bruscas y crear una experiencia de usuario fluida, todo
 
 - **Movimiento Suave del Jugador:** Para evitar la "teletransportación" entre celdas, se implementó una interpolación lineal. Al iniciar un movimiento, se almacenan las posiciones de inicio y destino. En cada fotograma, la posición visual del jugador se actualiza a un punto intermedio calculado con la fórmula: `posicion_actual = pos_inicio + (pos_destino - pos_inicio) * progreso`.
 
-  ```cpp
-  // En main.cpp
-      if (isPlayerMoving) {
-          float progress = playerMoveClock.getElapsedTime().asSeconds() / MOVE_DURATION_SECONDS;
-          if (progress >= 1.0f) {
-              isPlayerMoving = false;
-              jugador.setPosicion(playerTargetPos);
-          } else {
-              jugador.setPosicion(playerStartPos + (playerTargetPos - playerStartPos) * progress);
-          }
-      }
-  // ...
-  ```
+    ```cpp
+    // En main.cpp
+        if (isPlayerMoving) {
+            float progress = playerMoveClock.getElapsedTime().asSeconds() / MOVE_DURATION_SECONDS;
+            if (progress >= 1.0f) {
+                isPlayerMoving = false;
+                jugador.setPosicion(playerTargetPos);
+            } else {
+                jugador.setPosicion(playerStartPos + (playerTargetPos - playerStartPos) * progress);
+            }
+        }
+    // ...
+    ```
 
 - **Visualización del Solver:** Cumpliendo con el requisito de una visualización "paso a paso" (*proporcionar visualización en tiempo real y paso a paso de los algoritmos*), la solución se presenta en dos fases animadas:
 
       1.  **Fase de Revelado:** Una primera animación (`animandoSolucion`) utiliza un `sf::Clock` para dibujar progresivamente los marcadores de la ruta, uno por uno, creando un efecto de "dibujado" del camino.
       2.  **Fase de Autoplay:** Una vez revelada la ruta, se inicia una segunda animación (`isAutoplaying`) donde el personaje del jugador sigue el camino revelado, utilizando la misma lógica de movimiento suave para cada paso.
 
-      ```cpp
-      // En GridModel.cpp
-      void GridModel::dibujarSolucion(sf::RenderWindow &ventana, const std::vector<int> &camino, size_t numPasosAMostrar)
-      {
-      // ...
-          sf::CircleShape marcador(5.f);
-          marcador.setFillColor(sf::Color(231, 76, 60, 180));
-          marcador.setOrigin({5.f, 5.f});
-          for (size_t i = 0; i < numPasosAMostrar && i < camino.size(); ++i)
-          {
-              marcador.setPosition(getNodeCenter(camino[i]));
-              ventana.draw(marcador);
-          }
-      }
-      // ...
-      ```
+        ```cpp
+        // En GridModel.cpp
+        void GridModel::dibujarSolucion(sf::RenderWindow &ventana, const std::vector<int> &camino, size_t numPasosAMostrar)
+        {
+        // ...
+            sf::CircleShape marcador(5.f);
+            marcador.setFillColor(sf::Color(231, 76, 60, 180));
+            marcador.setOrigin({5.f, 5.f});
+            for (size_t i = 0; i < numPasosAMostrar && i < camino.size(); ++i)
+            {
+                marcador.setPosition(getNodeCenter(camino[i]));
+                ventana.draw(marcador);
+            }
+        }
+        // ...
+        ```
 
 - **Transiciones de la Interfaz:** Para las pantallas de "GANASTE" y "PERDISTE", se utilizó un `sf::Clock` para animar el canal alfa (opacidad) del color del texto, logrando un efecto de desvanecimiento suave.
   ```cpp
@@ -199,9 +217,11 @@ El orden de dibujado es crucial y se gestiona en el bucle principal de [`main.cp
 2.  `miGrid.dibujar()`: Se dibuja la malla de triángulos.
 3.  `miGrid.dibujarSolucion()`: Se dibuja la animación del camino solución (si está activa).
 4.  `jugador.dibujar()`: Se dibuja al jugador sobre el grid.
-5.  `window.draw(HUD)`: Se dibujan todos los textos y botones de la interfaz.
+5.  `window.draw(HUD)`: Se dibuja el **panel lateral de interfaz**, que incluye toda la información relevante para el jugador (puntuación, turnos, objetivo actual) y los botones de interacción como "Reiniciar" y "Resolver".
 6.  `window.draw(Overlay)`: Se dibuja la capa de fin de juego (si está activa).
 7.  `window.display()`: Se intercambia el búfer de renderizado con el visible, mostrando el fotograma final al usuario.
+
+>Actualmente, como se mencionó anteriormente, la ventana se divide en dos paneles principales: el panel lateral de interfaz (HUD) y el panel principal donde se muestra el área de juego.
 
 !!!note
     Para más información sobre como funcionan las clases de SFML, se puede consultar la sección [Biblioteca Gráfica y Manual de Uso](graphics_lib.md).

@@ -1,4 +1,16 @@
-# Escape the Grid: The Magic Box
+<p align="center">
+  <img src="img/logo1.png" alt="Escape the Grid Logo" width="300"/>
+</p>
+
+<h1 align="center">Escape The Grid: The Magic Box</h1>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/versi%C3%B3n-1.0.1-blue" />
+  <img src="https://img.shields.io/badge/C%2B%2B-17-blue?style=flat&logo=c%2B%2B" />
+  <img src="https://img.shields.io/badge/SFML-3.0.0-green?logo=sfml" />
+  <img src="https://img.shields.io/badge/CMake-3.10+-blue?logo=cmake" />
+</p>
+
 
 ## Descripción General del Juego
 

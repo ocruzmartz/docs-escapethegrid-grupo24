@@ -27,34 +27,41 @@ W..2.3.W
 WWTT..WW
 ```
 ### Reglas de Creación
-- El mapa debe de tener la celda de inicio (`S`).
-- El mapa debe de tener la celda final (`F`).
-- Las celdas de la secuencia de la "Caja Mágica" deben estar numeradas del 1 al 3.
-- Se debe de tener en cuenta los turnos (30 movimientos) antes de que los muros temporizados se conviertan en muros permanentes. Es importante hacer el mapa de tal manera que el jugador pueda completar la secuencia de la "Caja Mágica" antes de que los muros temporizados se conviertan en muros permanentes.
+- **Requeridas**
+    - El mapa debe de tener la celda de inicio (`S`).
+    - El mapa debe de contener celdas de camino (`.`).
+    - El mapa debe de tener la celda final (`F`).
+    - Las celdas de la secuencia de la "Caja Mágica" deben estar numeradas del `1` al `3`.
 
-!!! info "Información Adicional"
-    Si se desean modificar los turnos antes de que se activen los temporizados, únicamente es posible hacerlo modificando el código fuente del juego en el archivo `config.hpp`, ya que actualmente no hay una opción para configurarlo desde el archivo de mapa. Para más detalles sobre cómo compilar el juego, revisa la sección de [Instrucciones de Compilación](./compilation.md).
+- **Opcionales**
+    - Los muros son opcionales, pero si se incluyen, deben ser representados por `W`.
+    - Los muros temporizados (`T`) son opcionales, pero se debe de tener en cuenta los turnos (30 movimientos) antes de que los muros temporizados se conviertan en muros permanentes. Es importante hacer el mapa de tal manera que el jugador pueda completar la secuencia de la "Caja Mágica" antes de que los muros temporizados se conviertan en muros permanentes. De lo contrario, el jugador no podrá completar el mapa si no hay un camino válido.
+
+    !!! info "Información Adicional"
+        Si se desean modificar los turnos antes de que se activen los temporizados, únicamente es posible hacerlo modificando el código fuente del juego en el archivo `config.hpp`, ya que actualmente no hay una opción para configurarlo desde el archivo de mapa. Para más detalles sobre cómo compilar el juego, revisa la sección de [Instrucciones de Compilación](./compilation.md).
 
 ## Dónde encontrar el Archivo `mapa.txt`
 
 El archivo `mapa.txt` se encuentra en la carpeta del ejecutable del juego, específicamente en la raíz. Para más información sobre como obtener el juego, revisa la sección de [Controles y Jugabilidad](./how_to_play.md).
 
-![mapa](../img/mapa.png)
+![mapa](../img/game2.png)
 
 ## Cómo Crear o Modificar un Mapa
 
 Para crear o modificar un mapa personalizado, sigue estos pasos:
 
 1. Abre el archivo `mapa.txt` ubicado en la carpeta del ejecutable del juego en un editor de texto (como Notepad, Visual Studio Code, etc.).
-2. Escribe o edita el contenido del archivo siguiendo la estructura mencionada anteriormente.
+2. Escribe o edita el contenido del archivo siguiendo la estructura mencionada en la sección [Comprensión de Mapas Personalizados](/user_guide/custom_maps/#comprension-de-mapas-personalizados).
 3. Guarda los cambios en el archivo `mapa.txt`.
 
-!!! info "Información"
-    El mismo proceso es utilizado para crear o modificar mapas personalizados en la versión de compilación del juego. El archivo `mapa.txt` se encuentra en la raíz del proyecto. Para más información sobre cómo compilar el juego, revisa la sección de [Instrucciones de Compilación](./compilation.md).
+    !!! info "Información"
+        El mismo proceso es utilizado para crear o modificar mapas personalizados en la versión de compilación del juego. El archivo `mapa.txt` se encuentra en la raíz del proyecto. Para más información sobre cómo compilar el juego, revisa la sección de [Instrucciones de Compilación](./compilation.md).
 
 ## Cómo Probar tu Mapa
 
-Una vez que hayas creado o modificado el archivo `mapa.txt`, simplemente inicia el juego abriendo el archivo `.exe`. El juego cargará automáticamente el mapa definido en este archivo. Si el mapa es válido, podrás jugarlo inmediatamente.
+Una vez que hayas creado o modificado el archivo `mapa.txt`, simplemente inicia el juego abriendo el archivo `EscapeTheGrid.exe`. El juego cargará automáticamente el mapa definido en este archivo. Si el mapa es válido, podrás jugarlo inmediatamente.
+
+![Game](../img/game1.png)
 
 !!! warning "Precaución"
     - Asegúrate de que el mapa sea válido y siga las [Reglas de Creación](/user_guide/custom_maps/#reglas-de-creacion). Si el mapa no es válido, el juego podría no funcionar correctamente, el mapa podría no cargar o podría haber errores inesperados.

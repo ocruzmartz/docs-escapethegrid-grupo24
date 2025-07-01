@@ -58,8 +58,16 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.arithmatex:
       generic: true
- 
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
 
+extra:
+  version:
+    provider: mike
+
+custom_dir: overrides
+ 
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js

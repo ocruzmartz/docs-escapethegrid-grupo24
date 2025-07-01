@@ -23,8 +23,12 @@ Antes de comenzar, asegúrate de tener Visual Studio Code configurado correctame
 
 1. Abre Visual Studio Code.
 2. Navega a la sección de extensiones en la barra lateral izquierda.
+
+<figure markdown="span">
+   ![Extensiones de Visual Studio Code](../img/extensiones-vscode.png){width="50%"}
+</figure>
     
-   ![Extensiones de Visual Studio Code](../img/extensiones-vscode.png)
+  
 
 3. Busca e instala las extensiones necesarias:
 
@@ -52,42 +56,55 @@ Ahora, necesitamos clonar el repositorio del proyecto desde GitHub. Asegúrate d
 
 Para este paso, asegúrate de que todas las herramientas y bibliotecas mencionadas en los requisitos previos estén correctamente instaladas y configuradas.
 
-3.  Una vez clonado el repositorio, en la misma terminal, navega al directorio del proyecto utilizando el siguiente comando:
+1.  Una vez clonado el repositorio, en la misma terminal, navega al directorio del proyecto utilizando el siguiente comando:
 
     ```bash
     cd programming-challenge-tsc012025-pc-grupo24
     ```
 
-4.  Ejecuta el siguiente comando para abrir la carpeta del proyecto en Visual Studio Code:
+2.  Ejecuta el siguiente comando para abrir la carpeta del proyecto en Visual Studio Code:
 
     ```bash
     code .
     ```
 
-5.  Al inciar, se te mostrará una ventana para seleccionar el kit de CMake. Asegúrate de seleccionar el kit que corresponde a tu compilador C++ instalado (`GCC 14.2.0...`).
+3.  Al inciar, se te mostrará una ventana para seleccionar el kit de CMake. Asegúrate de seleccionar el kit que corresponde a tu compilador C++ instalado (`GCC 14.2.0...`).
 
     ![Seleccionar Kit de CMake](../img/select_kit.png)
 
     !!! info "Información"
-        Si no ves la ventana para seleccionar el kit de CMake, puedes abrirla manualmente presionando `Ctrl + Shift + P` y buscando "CMake: Select a Kit".
+        Si no ves la ventana para seleccionar el kit de CMake, puedes abrirla manualmente presionando `Ctrl + Shift + P` y buscando "CMake: Select a Kit".        
 
 6. Una vez seleccionado el kit, Visual Studio Code comenzará a configurar el proyecto. Espera a que se complete el proceso.
 
     !!! info "Información"
         Notarás que se creó un folder llamado `build` en la raíz del proyecto. Este es el directorio donde se generarán los archivos de compilación. Por el momento, no te preocupes por este folder, ya que lo utilizaremos más adelante.
 
-7. Ahora, dirigete a la opción "Ejecución y Depuración" en la barra lateral izquierda de Visual Studio Code.
+4. Antes de continuar es importante asegurarse de que CMake pueda encontrar la carpeta de instalación de SFML, abre la paleta de comandos con `Ctrl + Shift + P` y busca "Preferences: Open Settings (JSON)".
+
+5. Agrega (o edita) la siguiente línea en el archivo `settings.json`, reemplazando la ruta por la ubicación real donde tienes SFML:
+
+    ```json
+    "cmake.configureSettings": {
+        "SFML_DIR": "C:/<nombre_de_carpeta>/SFML-3.0.0/"
+    }
+    ```
+
+    !!! info "Información"
+        Asegúrate de que la ruta sea correcta y que apunte a la carpeta donde tienes SFML 3.0.0 instalada. Esta configuración le indica a CMake dónde encontrar los archivos de SFML necesarios para compilar el proyecto. Para más información sobre cómo instalar SFML, consulta la sección [SFML 3.0.0](../user_guide/setup_libs/sfml.md) en **Herramientas y Bibliotecas Requeridas**.
+
+6. Ahora, dirigete a la opción "Ejecución y Depuración" en la barra lateral izquierda de Visual Studio Code.
 
     ![Ejecución y Depuración](../img/execution_depuration.png)
 
-8. Selecciona la opción "Cree un archivo `launch.json`" y luego, en la ventana emergente, elige "C++ (GDB/LLDB)".
-
+7. Selecciona la opción "Cree un archivo `launch.json`" y luego, en la ventana emergente, elige "C++ (GDB/LLDB)".
+    
     ![Crear launch.json](../img/select.png)
 
     !!! info "Información"
         Notarás que se creó un archivo `launch.json` en la carpeta `.vscode` en la raíz del proyecto.
 
-9.  Ingresa a este archivo `launch.json` que se creó en el paso anterior y reemplaza el contenido con la siguiente configuración. Luego, guarda los cambios.
+8.  Ingresa a este archivo `launch.json` que se creó en el paso anterior y reemplaza el contenido con la siguiente configuración. Luego, guarda los cambios.
 
     ```json
     {
